@@ -9,11 +9,13 @@ Implementation of Red-Black Tree and Binary Search Tree in C++ with performance 
 - Colored traversal of RBT
 - Performance measurement
 - Tree validation
+- Preset 1 for consequent fill of two trees for comparison
+- Preset 2 for random fill
 
 ## Building
 ```bash
-g++ -c main.cpp
-g++ main.o -o compiled.exe
+g++ -c all cpp files
+g++ all object files -o compiled.exe
 ```
 
 ## Usage
@@ -28,4 +30,4 @@ g++ main.o -o compiled.exe
 - `t` - traverse (colored for RBT)
 - `b` - black height (RBT only)
 - `q` - check RBTs correctness
-- `e` - exit (calls destructors)
+- `e` - exit
