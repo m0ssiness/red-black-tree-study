@@ -7,9 +7,9 @@ class BST {
         Node* root;
 
         void __insert(Node*, Node*, int, bool);
-        Node* __search(Node*, int);
-        Node* __remove__findSuccessor(Node*, bool &);
-        void __remove(Node*, char);
+        std::pair <Node*, Node*> __search(Node*, Node*, int);
+        std::pair <Node*, Node*> __remove__findSuccessor(Node*, Node*);
+        void __remove(std::pair <Node*, Node*>);
 
     public:
         BST ();
