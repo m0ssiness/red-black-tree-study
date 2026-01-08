@@ -24,13 +24,27 @@ long long measuredOperation(BST* & tree, char type, int temp = 0) {
     switch(type) {
             case 'i' : {
                 start = std::chrono::steady_clock::now();
-                tree->insert(temp);
+                try
+                {
+                    tree->insert(temp);
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << e.what() << '\n';
+                }
                 end = std::chrono::steady_clock::now();
                 break;
             };
             case 'd' : {
                 start = std::chrono::steady_clock::now();
-                tree->remove(temp);
+                try
+                {
+                    tree->remove(temp);
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << e.what() << '\n';
+                }
                 end = std::chrono::steady_clock::now();
                 break;
             };
@@ -58,13 +72,27 @@ long long measuredOperation(RBT* & tree, char type, int temp = 0) {
     switch(type) {
             case 'i' : {
                 start = std::chrono::steady_clock::now();
-                tree->insert(temp);
+                try
+                {
+                    tree->insert(temp);
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << e.what() << '\n';
+                }
                 end = std::chrono::steady_clock::now();
                 break;
             };
             case 'd' : {
                 start = std::chrono::steady_clock::now();
-                tree->remove(temp);
+                try
+                {
+                    tree->remove(temp);
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << e.what() << '\n';
+                }
                 end = std::chrono::steady_clock::now();
                 break;
             };
@@ -110,8 +138,15 @@ void preset2(BST* & bst, RBT* & rbt) { // RANDOM FILL
     int a = 0;
     for (int i = 1; i < 100000; ++i) {
         a = getRandomNumber(0, 1000000);
-        bst->insert(a);
-        rbt->insert(a);
+        try
+        {
+            bst->insert(a);
+            rbt->insert(a);
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
     }
 }
 
@@ -123,8 +158,8 @@ int main() {
     int n = 0;
 
     //presets there
-    preset1(BSTtree, RBTtree);
-    //preset2(BSTtree, RBTtree);
+    //preset1(BSTtree, RBTtree);
+    preset2(BSTtree, RBTtree);
     //presets end
 
     cout << BOLD << "\nPerform measured opration [input: tree(R - RBT, B - BST), type, number]\ni - insert\nd - delete\ns - search\nt - traverse\nb(RBT only) - get black height\nq(RBT only) - check RBT correctness\ne - exit\n" << COLOR_RESET;
