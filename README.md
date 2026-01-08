@@ -4,24 +4,18 @@ Implementation of Red-Black Tree and Binary Search Tree in C++ with performance 
 
 ## Features
 
-- Binary Search Tree (BST), implemented with parental connection, for easier copying of functionality into the RBT class
+- Binary Search Tree (BST)
 - Red-Black Tree (RBT) with full balancing
 - Colored traversal of RBT
 - Performance measurement
 - Tree validation
 - Preset 1 for consequent fill of two trees for comparison
 - Preset 2 for random fill
+- Till now only manual console I/O
 
 ## Building
-```bash
-g++ -c all cpp files
-g++ all object files -o compiled.exe
-```
 
-## Usage
-```bash
-./compiled
-```
+This project uses CMake
 
 ### Commands:
 - `i` - insert
